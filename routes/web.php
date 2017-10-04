@@ -50,7 +50,7 @@ Route::post('/checkout', [
 
 Route::group(['prefix' => 'user'], function() {
 
-	Route::group(['middleware' => 'guest'], function() {
+	Route::group(['middleware' => 'web'], function() {
 
 		Route::get('/signup/{getSignup}', [
 			'uses' => 'UserController@getSignup',
