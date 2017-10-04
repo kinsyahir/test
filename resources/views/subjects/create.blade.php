@@ -14,6 +14,16 @@
 
 		  <div class="form-group">
 		    <label for="exampleFormControlInput1">Subject Title </label>
+		    <select name="course_id">
+		    	@foreach ($courses as $course)
+		    		<option value="{{ $course->id }}"> {{ $course->course_name }}
+		    		</option>
+		    	@endforeach
+		    </select>	
+		  </div>
+
+		  <div class="form-group">
+		    <label for="exampleFormControlInput1">Subject Title </label>
 		    <input type="text" class="form-control" name="subject_title" id="exampleFormControlInput1" placeholder="The Web Developer Bootcamp">
 		  </div>
 		     
