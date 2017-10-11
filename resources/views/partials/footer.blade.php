@@ -1,6 +1,18 @@
-<div class="col-md-12">
-  <div class="row">
-    <table width="1500" border="0" bgcolor="#5F5F5F" style="font-color:#FFFFFF">
+<style>
+  .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+</style>
+
+  <div class="row" id="footer">
+    <table width="1550" border="0" bgcolor="#5F5F5F" style="color:white;">
       <tbody>
         <tr>
           <td width="130" align="center">About Us  </td>
@@ -27,4 +39,3 @@
       </tbody>
     </table>
   </div>
-</div>

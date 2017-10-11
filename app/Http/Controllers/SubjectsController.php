@@ -74,6 +74,7 @@ class SubjectsController extends Controller
         */
     }
 
+    //CONTROLLER FOR SHOPPING-CART
     public function getIndex()
     {
         $subjects = Subject::all();
@@ -96,16 +97,13 @@ class SubjectsController extends Controller
     {
         if (!Session::has('cart'))
         {
-            return view('shop.shoppingCartTry', 'shop.checkout');
+            return view('shop.shoppingCartTry');
         }
 
         $oldCart = Session::get('cart');
         $cart = new cart($oldCart);
         //dd($cart->items,$cart->subject_price,$cart->total_price);
-        return view('shop.shoppingCartTry', ['subjects'=>$cart->items, 
-            'total_price'=>$cart->total_price, ]);
-        return view('shop.checkout', ['subjects'=>$cart->items, 
-            'total_price'=>$cart->total_price, ]);
+        return view('shop.shoppingCartTry', ['subjects'=>$cart->items, 'total_price'=>$cart->total_price, 'totalQty'=>$cart->totalQty,]);
     }
 
     public function getCheckout()
@@ -115,9 +113,10 @@ class SubjectsController extends Controller
             return view('shop.checkout');
         }
         $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $total = $cart->total_price;
-        return view('shop.checkout', ['total' =>$total]);
+        $cart = new cart($oldCart);
+        return view('shop.checkout', ['subjects'=>$cart->items, 'total_price'=>$cart->total_price, 'totalQty'=>$cart->totalQty,]);
+        // $total = $cart->total_price;
+        // return view('shop.checkout', ['total' =>$total]);
     }
 
    /* public function show(Request $request, $id)

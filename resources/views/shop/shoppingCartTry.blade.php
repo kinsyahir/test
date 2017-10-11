@@ -25,6 +25,8 @@
 		<div class="container">
 			<div class="row"> 
 				<div class="col-md-9">
+					<span style="font-size:22px">{{ $totalQty }} Courses in Cart</span>
+					<br>
 					<table class="table table-boardered table-hover table-striped" height="93" border="0" >	
 							@foreach($subjects as $subject)
 								<tr>
@@ -93,6 +95,8 @@
 			            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			          </div>
 
+			          <input type="hidden" name="total_price" value="<?php echo $total_price ?>" />
+
 			          <input type="checkbox" name="vehicle" value="Bike"> Check here for exciting deals and personalized course.<br>
 			      	  </br>
 			          <button type="submit" class="btn btn-danger btn-block" id="btnsignup">Sign Up</button>
@@ -125,6 +129,7 @@
 			          <div class="form-group">
 			            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			          </div>
+			          <input type="hidden" name="total_price" value="<?php echo $total_price ?>" />
 			          <button type="submit" class="btn btn-success" id="btnsignin" style="padding:7px 205px;">Sign In</button>
 			        </form>
 			      </div>

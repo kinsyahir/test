@@ -1,13 +1,12 @@
 <?php
 
-
 Route::get('/', 'CoursesController@index');
 
 Route::get('/courses/{create}', 'CoursesController@create');
 
 Route::post('/course', 'CoursesController@store');
 
-Route::GET('/courses/{id}', 'CoursesController@edit');
+Route::get('/courses/{id}', 'CoursesController@edit');
 
 Route::get('/subjects/{create}', 'SubjectsController@create');
 
@@ -27,15 +26,9 @@ Route::get('/add-to-cart/{id}', [
 	'as' => 'shop.addToCart'
 	]);
 
-/*Route::get('/shopping-cart', [
-	'uses' => 'SubjectsController@getCart', 
-	'as' => 'shop.shoppingCart'
-	]);
-*/
-
 Route::get('/shopping-cart', [
 	'uses' => 'SubjectsController@getCart', 
-	'as' => 'shop.shoppingCartTry'
+	'as' => 'shop.shoppingCartTry','shop.checkout'
 	]);
 
 Route::get('/checkout', [
@@ -43,10 +36,20 @@ Route::get('/checkout', [
 	'as' => 'checkout'
 	]);
 
-Route::post('/checkout', [
-	'uses' => 'SubjectsController@postCheckout', 
-	'as' => 'checkout'
+Route::get('/payment/{id}', [
+	'uses' => 'BankController@getAmountBalance',
+	'as' => 'shop.payments'
 	]);
+
+Route::post('/payments', [
+	'uses' => 'BankController@getAmountBalance',
+	'as' => 'shop.payments'
+	]);
+
+// Route::post('/checkout', [
+// 	'uses' => 'SubjectsController@postCheckout', 
+// 	'as' => 'checkout'
+// 	]);
 
 Route::group(['prefix' => 'user'], function() {
 
