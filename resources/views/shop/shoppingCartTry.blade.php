@@ -121,10 +121,10 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <form method="POST" action="{{ route('user.signin') }}" enctype="multipart/form-data">
+			        <form method="POST" action="{{ url('/login') }}" enctype="multipart/form-data">
 			        	{{ csrf_field() }}
 			          <div class="form-group">
-			            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
+			            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
 			          </div>
 			          <div class="form-group">
 			            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
@@ -188,34 +188,34 @@ $(document).ready(function(){
 
 	//$(document).ready(function(){
 
-		$('#btnsignin').on('click',function(){
-			var email = $('#email').val();
-			var password = $('#password').val();
-			if(email != '' && password != '')
-			{
-				$ajax({
-					url:"{{ route('user.signin') }}",
-					method:"POST",
-					data:{email:email, password:password},
-					success:function(data){
-						if(data == 'No')
-						{
-							alert("Wrong Data");
-						}
-						else
-						{
-							$('#loginModal').hide();
-							location.reload();
-						}
-					}
-				});
-			}
+		// $('#btnsignin').on('click',function(){
+		// 	var email = $('#email').val();
+		// 	var password = $('#password').val();
+		// 	if(email != '' && password != '')
+		// 	{
+		// 		$ajax({
+		// 			url:"{{ route('user.signin') }}",
+		// 			method:"POST",
+		// 			data:{email:email, password:password},
+		// 			success:function(data){
+		// 				if(data == 'No')
+		// 				{
+		// 					alert("Wrong Data");
+		// 				}
+		// 				else
+		// 				{
+		// 					$('#loginModal').hide();
+		// 					location.reload();
+		// 				}
+		// 			}
+		// 		});
+		// 	}
 
 			// else
 			// {
 			// 	alert("Both Fields are required")
 			// }
-		});
+		// });
 });
 
 		$('#logout').click(function(){

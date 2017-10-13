@@ -39,24 +39,24 @@
 					</div>
 	@endif
 
-					<div class="col-md-8">
+					<div class="col-md-8" boarder="1">
 						<span style="color:#00b300;"><h3>Total: RM{{ $total_price }}</h3></span><hr>
 						<table class="table table-boardered table-hover table striped">
-							<form method="POST" action ="{{ route('shop.payments') }}" enctype="multipart/form-data">
+							<form method="POST" action ="{{ route('shop.balance') }}" enctype="multipart/form-data">
 								{{ csrf_field() }}
 								<tr>
 									<th>New Payment Card</th>
 								</tr>
 								<tr>
-									<td><input type="text" class="form-control" id="card_number" name="card_number" placeholder="Card Number"></td>
+									<td><input type="text" class="form-control" id="card_number" name="card_number" placeholder="Card Number" required></td>
 								</tr>
 								<tr>
-									<td><input type="text" class="form-control" id="month" name="month" placeholder="MM"></td>
-									<td><input type="text" class="form-control" id="year" name="year" placeholder="YYYY"></td>
-									<td><input type="text" class="form-control" id="code" name="code" placeholder="Security Code"></td>
+									<td><input type="text" class="form-control" id="month" name="month" placeholder="MM" required></td>
+									<td><input type="text" class="form-control" id="year" name="year" placeholder="YYYY" required></td>
+									<td><input type="text" class="form-control" id="code" name="code" placeholder="Security Code" required></td>
 								</tr>
 								<tr>
-									<td colspan="3"><input type="text" class="form-control" id="card_name" name="card_name" placeholder="Name on Card"></td>
+									<td colspan="3"><input type="text" class="form-control" id="card_name" name="card_name" placeholder="Name on Card" required></td>
 								</tr>
 
 								<input type="hidden" name="id" value="1">

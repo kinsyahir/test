@@ -36,14 +36,28 @@ Route::get('/checkout', [
 	'as' => 'checkout'
 	]);
 
-Route::get('/payment/{id}', [
+// Route::get('/exit/{id}', [
+// 	'uses' => 'BankController@getAmountBalance',
+// 	'as' => 'shop.balance'
+// 	]);
+
+Route::post('/balance', [
 	'uses' => 'BankController@getAmountBalance',
-	'as' => 'shop.payments'
+	'as' => 'shop.balance'
 	]);
 
-Route::post('/payments', [
-	'uses' => 'BankController@getAmountBalance',
-	'as' => 'shop.payments'
+Route::get('/exit', [
+	'uses' => 'BookingController@getExit',
+	'as' => 'shop.exit'
+	]);
+
+Route::get('/booking', [
+	'uses' => 'BookingController@getBookingDetails',
+	'as' => 'shop.booking'
+	]);
+Route::post('/booking', [
+	'uses' => 'BookingController@postBookingDetails',
+	'as' => 'shop.booking'
 	]);
 
 // Route::post('/checkout', [
@@ -94,3 +108,7 @@ Route::group(['prefix' => 'user'], function() {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -108,6 +108,8 @@ class SubjectsController extends Controller
 
     public function getCheckout()
     {
+
+        dd(9);
         if (!Session::has('cart'))
         {
             return view('shop.checkout');
