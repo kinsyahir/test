@@ -31,6 +31,10 @@
         </ul>
       </li>
 
+      @if (Auth::check())
+        <a class="nav-link al-auto" href=""> {{Auth::user()->name}}</a>
+      @endif
+
     </ul>
   </div>
 

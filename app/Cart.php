@@ -2,11 +2,13 @@
 
 namespace App;
 
+
 class Cart
 {
 	public $items = null;
 	public $totalQty = 0;
 	public $total_price = 0;
+	public $user_id = 0;
 
 	public function __construct($oldCart)
 	{
@@ -15,8 +17,10 @@ class Cart
 			$this->items = $oldCart->items;
 			$this->totalQty = $oldCart->totalQty;
 			$this->total_price = $oldCart->total_price;
+			$this->user_id = $oldCart->user_id;
 		}
 	}
+
 
 	public function add($item,$id)
 	{
@@ -29,11 +33,17 @@ class Cart
 			}
 		}
 		$storedItem['qty']++;
-		//$storedItem['total_price'] = $item->total_price+$item->subject_price;
+		$storedItem['total_price'] = $item->total_price+$item->subject_price;
 		
 		//stored the item
 		$this->items[$id] = $storedItem;
-		$this->totalQty++;
 		$this->total_price += $item->subject_price;
+		$this->totalQty++;
 	}
+
+	public function addNewCustomer($id)
+	{
+		$this->user_id = $id;
+	}
+
 }  

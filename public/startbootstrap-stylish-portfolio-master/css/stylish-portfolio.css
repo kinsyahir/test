@@ -1,0 +1,414 @@
+/*!
+ * Start Bootstrap - Stylish Portfolio (https://startbootstrap.com/template-overviews/stylish-portfolio)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/blob/master/LICENSE)
+ */
+
+/* Global Styles */
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.text-vertical-center {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Custom Button Styles */
+
+.btn-dark {
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+  color: #fff;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.btn-light {
+  color: #333;
+  border: none;
+  border-radius: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.btn-light:hover, .btn-light:focus, .btn-light:active {
+  color: #333;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+
+/* Custom Horizontal Rule */
+
+hr.small {
+  max-width: 100px;
+}
+
+
+/* Side Menu */
+
+#sidebar-wrapper {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  overflow-y: auto;
+  width: 250px;
+  height: 100%;
+  -webkit-transition: all .4s ease 0s;
+  -moz-transition: all .4s ease 0s;
+  -ms-transition: all .4s ease 0s;
+  -o-transition: all .4s ease 0s;
+  transition: all .4s ease 0s;
+  transform: translateX(250px);
+  background: #222;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, .2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+  font-size: 18px;
+  line-height: 55px;
+  height: 55px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+#menu-toggle {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+
+#sidebar-wrapper.active {
+  right: 250px;
+  width: 250px;
+  -webkit-transition: all .4s ease 0s;
+  -moz-transition: all .4s ease 0s;
+  -ms-transition: all .4s ease 0s;
+  -o-transition: all .4s ease 0s;
+  transition: all .4s ease 0s;
+}
+
+.toggle {
+  font-size: 1em;
+  margin: 5px 5px 0 0;
+  padding: 15px 20px;
+}
+
+
+/* Header */
+
+.header {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg.jpg) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/* About */
+
+.about {
+  padding: 50px 0;
+}
+
+
+/* Services */
+
+.services {
+  padding: 50px 0;
+}
+
+.service-item {
+  margin-bottom: 30px;
+}
+
+
+/* Callout */
+
+.callout {
+  display: table;
+  width: 100%;
+  height: 400px;
+  color: #fff;
+  background: url(../img/callout.jpg) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/* Portfolio */
+
+.portfolio {
+  padding: 50px 0;
+}
+
+.portfoliocart {
+  padding: 0px 0;
+  height: 600px;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.img-portfolio {
+  margin: 0 auto;
+}
+
+.img-portfolio:hover {
+  opacity: .8;
+}
+
+
+/* Call to Action */
+
+.call-to-action {
+  padding: 50px 0;
+}
+
+.call-to-action .btn {
+  margin: 10px;
+}
+
+
+/* Map */
+
+.map {
+  height: 500px;
+}
+
+@media(max-width:768px) {
+  .map {
+    height: 75%;
+  }
+}
+
+.map iframe {
+  pointer-events: none;
+}
+
+
+/* Footer */
+
+footer {
+  padding: 100px 0;
+}
+
+#to-top {
+  font-size: 1em;
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  display: none;
+  padding: 15px 20px;
+}
+
+/*course header */
+.courseheader {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 70%;
+  background: url(../img/photography.png) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+///////////////////carousel/////////////////////////
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+/*body{
+  background-image: url('https://lh3.googleusercontent.com/-QEYT2a1VA-s/V9IhCZNMfKI/AAAAAAAAAuY/kuuJ3LD4L3QG_0EwaNFhIalJPOD-C7opQCJoC/w1600-h900/black%2Band%2Bgreen%2Bshards.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+*/
+img{
+  width: 100%;
+  height: 200px;
+}
+
+.fa{
+  cursor: pointer;
+}
+
+.headercart{
+  width: 100%;
+  overflow: auto;
+  background-color: #2356bc;
+  color: #ffffff;
+  clear: both;
+  padding: 20px 50px;
+  box-sizing: border-box; 
+}
+
+.heading{
+  float: left;
+}
+
+.cart{
+  float: right;
+  text-align: center;
+  color: #ffffff;
+}
+
+.total-text p{
+  display: inline;
+  color: #000000;
+}
+
+#cart-items{
+  position: absolute;
+  right: 20px;
+  top: 10%;
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 50px 40px;
+  z-index: 999;
+  color: #000000;
+
+}
+
+.item{
+  position: relative;
+  float: left;
+  margin: 1%;
+  border: 1px solid #1d78f7;
+  width: 18%;
+  text-align: center;
+  background-color: rgba(255, 255, 255);
+}
+
+.item-detail h4{
+  color: #fff;
+}
+
+.item-detail p{
+  color: #00a000;
+  font-weight: bold;
+}
+
+.prices p{
+  display: inline;
+}
+
+.checked {
+    color: orange;
+}
+
+.overflow{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #00a000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 65%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.overflow i{
+  position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.overflow:hover{
+  opacity: 1;
+}
+
+.price-display{
+  float: right;
+}
+
+.remove{
+  background-color: #00a000;
+  border-color:  #00a000;
+  border-radius: 3px;
+  color: #fff;
+  margin: 0px 5px;
+  padding: 0px 2px;
+  float: right;
+}
+
+#list-item li{
+  margin: 10px 0px;
+}
+
+///////////////rainbow color////////////////////
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

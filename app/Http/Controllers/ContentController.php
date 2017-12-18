@@ -8,6 +8,12 @@ use App\subject;
 
 use App\content;
 
+use App\Requirement;
+
+use App\Description;
+
+use Illuminate\Support\Facades\Storage;
+
 class ContentController extends Controller
 {
     /**
@@ -20,7 +26,8 @@ class ContentController extends Controller
         // /courses/create
         $subjects = Subject::all();
         $contents = Content::all();
-        return view('content.upload', compact('content', 'subject'));
+        $requirements = Requirement::all();
+        return view('content.upload', compact('content', 'subject', 'requirements'));
     }
 
     public function store()
@@ -49,5 +56,30 @@ class ContentController extends Controller
 
         // and then redirect to the home page
         return redirect('/');
+    }
+    public function getContentDetails($id)
+    {
+        $requirements = Requirement::where('subject_id','=', $id)->first();
+        $descriptions = Description::where('subject_id','=', $id)->first();
+
+        $subjects = Subject::find($id)->get();
+        $id = $id;
+
+        $contents = Storage::get('public/uploads/'.$requirements->requirement);
+
+        $contentsDesc = Storage::get('public/uploads/'.$descriptions->description);
+
+        
+        return view('udemy.content')->with('subjects', $subjects)->with('id', $id)
+        ->with('requirements', $requirements)->with('contents', $contents)->with('descriptions', $descriptions)->with('contentsDesc', $contentsDesc);
+    }
+
+    //Return subject title for course
+    public function getSubjectTitle($course_id){
+
+        // echo $course_id;
+        $subject = Subject::whereCourseId($course_id)->pluck('subject_title', 'id');
+
+        return $subject;
     }
 }

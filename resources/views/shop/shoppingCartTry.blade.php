@@ -81,7 +81,7 @@
 			      </div>
 
 			      <div class="modal-body">
-			        <form method="POST" action="{{ route('user.signup') }}" enctype="multipart/form-data">
+			      	<form method="POST" action="{{ route('signup') }}" enctype="multipart/form-data">
 			        	{{ csrf_field() }}
 			          <div class="form-group">
 			            <input type="text" class="form-control" id="name" name="name" placeholder="Username">
@@ -104,7 +104,7 @@
 			      </div>
 
 			      <div class="modal-footer">
-			        Already have an account? <button type="submit" id="btnsignin" data-toggle="modal" data-target="#modalSignIn" class="btn btn-primary">Sign In</button>
+			        Already have an account? <button id="btnsignin" data-toggle="modal" data-target="#modalSignIn" class="btn btn-primary">Sign In</button>
 			      </div>
 
 			    </div>
@@ -121,7 +121,7 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <form method="POST" action="{{ url('/login') }}" enctype="multipart/form-data">
+			        <form method="POST" action="{{ route('signin') }}" enctype="multipart/form-data">
 			        	{{ csrf_field() }}
 			          <div class="form-group">
 			            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
@@ -129,7 +129,8 @@
 			          <div class="form-group">
 			            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			          </div>
-			          <input type="hidden" name="total_price" value="<?php echo $total_price ?>" />
+					  <input type="hidden" name="total_price" value="<?php echo $total_price ?>" />
+			          <?php //<input type="hidden" name="user_id" value="{{ $user_id }}"> ?>
 			          <button type="submit" class="btn btn-success" id="btnsignin" style="padding:7px 205px;">Sign In</button>
 			        </form>
 			      </div>
@@ -187,50 +188,21 @@ $(document).ready(function(){
 	});
 
 	//$(document).ready(function(){
-
-		// $('#btnsignin').on('click',function(){
-		// 	var email = $('#email').val();
-		// 	var password = $('#password').val();
-		// 	if(email != '' && password != '')
-		// 	{
-		// 		$ajax({
-		// 			url:"{{ route('user.signin') }}",
-		// 			method:"POST",
-		// 			data:{email:email, password:password},
-		// 			success:function(data){
-		// 				if(data == 'No')
-		// 				{
-		// 					alert("Wrong Data");
-		// 				}
-		// 				else
-		// 				{
-		// 					$('#loginModal').hide();
-		// 					location.reload();
-		// 				}
-		// 			}
-		// 		});
-		// 	}
-
-			// else
-			// {
-			// 	alert("Both Fields are required")
-			// }
-		// });
 });
 
-		$('#logout').click(function(){
-			var action = "logout";
-			$.ajax({
-				url:"action.php",
-				method:"POST",
-				data:{action:action},
-				success:function(data)
-				{
-					location.reload();
-				}
+		// $('#logout').click(function(){
+		// 	var action = "logout";
+		// 	$.ajax({
+		// 		url:"action.php",
+		// 		method:"POST",
+		// 		data:{action:action},
+		// 		success:function(data)
+		// 		{
+		// 			location.reload();
+		// 		}
 
-			});
-		});
+		// 	});
+		// });
 
 </script>
 

@@ -62,9 +62,11 @@
 								<input type="hidden" name="id" value="1">
 												
 						</table>
+
 						@if(Session::has('cart'))
 						<button class="btn btn-danger" type="submit" value="submit" name="Complete Payment">Pay RM{{$total_price}}</button>
 						@endif
+
 						</form>
 					</div>
             	</div> 

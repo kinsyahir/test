@@ -17,21 +17,18 @@ class UserController extends Controller
 
     public function postSignup(Request $request) 
     {
+        //validate the form 
     	$this->validate($request,[
             'name' => 'required',
 			'email' => 'required',
 			'password' => 'required'
     	]);
 
-        $user = new user;
+        //create and save the user
+        $user = User::create(request(['name', 'email', 'password']));
 
-        $user->name = request('name');
-        $user->email = request('email');
-        $user->password = request('password');
-
-        //dd ($request->all());
-        // Save it to database
-        $user->save();
+        //sign them in
+        auth()->login($user);
 
         // and then redirect to the home page
         return redirect('/checkout');
@@ -48,6 +45,7 @@ class UserController extends Controller
 			'email' => 'email|required',
 			'password' => 'required'
     	]);
+
         return redirect('/checkout');
 
         // if (Auth::attempt(['name' => $request->('name'), 'email' => $request->input('email'), 'password' => $request->input('password')]))

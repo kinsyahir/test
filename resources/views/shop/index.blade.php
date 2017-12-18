@@ -15,10 +15,10 @@
 			  @if($subject->course_id ==1)
 				  <div class="col-sm-6 col-md-3">
 				    <div class="thumbnail">
-				      <img src={{ asset('storage/uploads/'.$subject->subject_image) }} alt="" style="height:200px; width:200px">
+				      <img src={{ asset('storage/uploads/'.$subject->subject_image) }} alt="" style="height:150px; width:200px">
 					      <div class="caption">
 						      	<br>
-						        <h5>{{ $subject->subject_title }}</h5>
+						        <h6>{{ $subject->subject_title }}</h6>
 						        <p>{{ $subject->subject_desc }}</p>
 						        <span style="color:#2ecc71;"><strong><p>RM {{ $subject->subject_price }}</p></strong></span>
 						        <div class="clearfix">
@@ -40,10 +40,10 @@
 			  @if($subject->course_id ==2)
 				  <div class="col-sm-6 col-md-3">
 				    <div class="thumbnail">
-				      <img src={{ asset('storage/uploads/'.$subject->subject_image) }} alt="" style="height:200px; width:200px">
+				      <img src={{ asset('storage/uploads/'.$subject->subject_image) }} alt="" style="height:150px; width:200px">
 					      <div class="caption">
 						      	<br>
-						        <h5>{{ $subject->subject_title }}</h5>
+						        <h6>{{ $subject->subject_title }}</h6>
 						        <p>{{ $subject->subject_desc }}</p>
 						        <span style="color:#2ecc71;"><strong><p>RM {{ $subject->subject_price }}</p></strong></span>
 						        <div class="clearfix">

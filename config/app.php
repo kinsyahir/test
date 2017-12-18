@@ -12,6 +12,12 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    
+    'host' => env('DB_HOST'),
+    'database' => env('DB_DATABASE'),
+    'username' => env('DB_USERNAME'),
+    'password' => env('DB_PASSWORD'),
+
 
     'name' => env('APP_NAME', 'Laravel'),
 
@@ -164,6 +170,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,6 +237,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Form' => collective\Html\FormFacade::class,
+        'Html' => collective\Html\HtmlFacade::class,
 
     ],
 
