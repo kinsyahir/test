@@ -1,6 +1,8 @@
 <?php
 
 namespace App;
+use Illuminate\Http\Request;
+
 
 
 class Cart
@@ -8,7 +10,7 @@ class Cart
 	public $items = null;
 	public $totalQty = 0;
 	public $total_price = 0;
-	public $user_id = 0;
+	public $user_id ;
 
 	public function __construct($oldCart)
 	{
@@ -44,6 +46,7 @@ class Cart
 	public function addNewCustomer($id)
 	{
 		$this->user_id = $id;
+		// $request->session()->put('cart.user_id',  $id);
 	}
 
 }  

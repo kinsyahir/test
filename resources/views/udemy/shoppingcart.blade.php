@@ -3,6 +3,7 @@
 <html lang="en">
 @include('partials.nav')
 
+
   <head>
     <style>
 
@@ -78,18 +79,22 @@
                       </td>
                     </tr>
                   @endforeach
-              </table>  
+              </table> 
+
+              <center>
+                <button type="button" class="btn btn-success" style="padding: 7px 45px;" id="shopping" data-whatever="@getbootstrap">Continue Shopping</button> 
+              </center>
             </div>
             
             <div class="col-md-3">
               <br>
               <h5>Total: </h5><p><h2><span style="color:#00b300;">RM{{ $total_price }}</span></h2></p>
-              <button type="button" class="btn btn-success" style="padding: 7px 95px;" id="btncheckout" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Checkout</button>
-              <hr><form class="form-inline">
-                      <input class="width:60px" type="text" placeholder="Apply Coupon Code" aria-label="Search">
-                    <button class="btn btn-success" style="padding:4px 15px; border-radius: 1px;" type="submit">Apply</button>
-                  </form>
-
+              <button type="button" class="btn btn-danger" style="padding: 7px 95px;" id="btncheckout" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Checkout</button>
+              <hr>
+              <form class="form-inline">
+                <input class="width:40px" type="text" placeholder="Apply Coupon Code" aria-label="Search">
+                <button class="btn btn-success" style="padding:4px 15px; border-radius: 1px;" type="submit">Apply</button>
+              </form>
             </div>
           </div>
           @else
@@ -227,6 +232,11 @@
             modal1.style.display = "none";
           }
         });
+
+        $('#shopping').on('click', function() {
+          window.location = '/course-content';
+        });
+
       });
     </script>
 

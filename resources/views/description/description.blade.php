@@ -37,16 +37,6 @@
 			</center>
 		</div>
 
-		<div class="col-md-6 text-right">
-			<form action="{{ route('') }}" method="get" class="form-inline">
-				<div class="form-group">
-					<input type="text" class="form-control" name="search" placeholder="Keyword">
-				</div>
-				<div class="form-group">
-					<button class="btn btn-success" type="submit">Search</button>
-				</div>
-			</form>
-		</div>
 		@include('description.list')
 	</div>
 

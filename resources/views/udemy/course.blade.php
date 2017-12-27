@@ -229,7 +229,7 @@
       </div>
     </aside>
 
-    <div style="height:400px;background-color:white;padding-top:100px;">
+    <div style="height:480px;background-color:white;padding-top:60px;">
 
       <center><h3><strong>You also can use Nazrol Academy to</strong></h3></center>
 
@@ -294,6 +294,28 @@
         </div>
         <!-- /.row -->
       </div>
+    </div>
+
+    <div style="height:300px;background-color:#2f71b7;padding-top:50px;">
+      <span style="font-color:white;">
+        <div class="container">
+          <center style="color:white;"><h3><strong>FEEDBACK FORM</strong></h3>
+            <br>
+            <form method="post" action="/email">
+              {!! csrf_field() !!}
+              <table>
+                <tr>
+                  <td><input type="text" name="name" placeholder="Name"></td>
+                  <td><input type="text" name="Email" placeholder="Email"></td>
+                  <td><input type="text" name="textmessage" placeholder="Message"></td>
+                </tr>
+              </table>
+              <br>
+                <button type="submit" class="btn btn-success" style="padding: 7px 45px;">send</button> 
+            </form>
+          </center>
+        </div>
+      </span>
     </div>
 
     <!-- Footer -->

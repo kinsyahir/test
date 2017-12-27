@@ -21,6 +21,14 @@ Route::get('/shop', [
 	'as' => 'shop.index'
 ]); 
 
+/////////////////////////////ROUTE FOR EMAIL////////////////////////////////
+
+Route::get('send', 'mailcontroller@send');
+
+Route::group(['middleware' => 'web'], function() {
+	Route::post('/email', 'subjectsController@requestEmail');
+});	
+
 /////////////////////ROUTE FOR REQUIREMENT(SUBJECT)/////////////////////////
 
 Route::get('/requirement-requirement', 'RequirementsController@getCourses');
@@ -33,11 +41,11 @@ Route::post('/requirement', 'RequirementsController@store');
 
 Route::get('/description-description', 'DescriptionsController@getCourses');
 
-Route::get('/findSubjectTitleDesc', 'DescriptionsController@findSubjectTitle');
+Route::get('/findSubjectTitleDesc', 'DescriptionsController@findSubjectTitleDesc');
 
 Route::post('/description', 'DescriptionsController@store');
 
-
+	
 //////////////////////NEW INTERFACE (UDEMY) ////////////////////////////////
 
 Route::get('/landingpage', [
@@ -201,8 +209,6 @@ Route::get('/homepage', [
 // 			'uses' => 'UserController@getLogout',
 // 			'as' => 'user.logout',
 // 		]);
-
-// 	});	
 
 // });
 

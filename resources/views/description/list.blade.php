@@ -2,7 +2,7 @@
 	<div class="panel-heading"><h3>Manage Descriptions</h3></div>
 
 	<div class="col-md-6 text-right">
-		<form action="{{ url('requirement-requirement') }}" method="get" class="form-inline">
+		<form action="{{ url('description-description') }}" method="get" class="form-inline">
 			<div class="form-group">
 				<input type="text" class="form-control" name="search" placeholder="Keyword">
 			</div>

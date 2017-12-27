@@ -36,8 +36,10 @@ class SessionsController extends Controller
         $user_id = $user->id;
         $oldCart = Session::get('cart');
         $cart = new cart($oldCart);
-        $cart->addNewCustomer($user_id, $user_id);
+        $cart->addNewCustomer($user_id);
         
+        $request->session()->put('cart',  $cart);
+        // dd($request->session()->all());
 
         return redirect()->route('udemy.checkout');
 

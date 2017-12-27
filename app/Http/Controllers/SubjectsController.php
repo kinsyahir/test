@@ -16,9 +16,11 @@ use Stripe\Stripe;
 
 use App\Cart;
 
+use Mail;
+
 class SubjectsController extends Controller
 {
-        public function create()
+    public function create()
     {
         // /subjects/create
         $subjects = subject::all();
@@ -27,8 +29,7 @@ class SubjectsController extends Controller
         return view('subjects.create', compact('subjects', 'courses'));
     }
 
-
-     	public function store(Request $request)
+    public function store(Request $request)
     {
         // POST /subject
 
@@ -101,9 +102,6 @@ class SubjectsController extends Controller
         return view('udemy.content', ['subjects' => $subjects]);
     }
 
-
-
-
     //CONTROLLER FOR SHOPPING-CART
     public function getIndex()
     {
@@ -113,18 +111,21 @@ class SubjectsController extends Controller
 
     public function getAddToCart(Request $request, $id)
     {
+        // dd($request,$id);
         $subjects = Subject::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($subjects, $subjects->id);
-
+        
         $request->session()->put('cart', $cart);
+
         // dd($request->session()->get('cart'));
         return redirect()->route('udemy.cart');
     }
 
     public function getCart()
-    {
+    {   
+        $subjects = Subject::all();
         if (!Session::has('cart'))
         {
             return view('udemy.content');
@@ -162,6 +163,21 @@ class SubjectsController extends Controller
         // dd($cart);
         return redirect()->route('balance',[$id]);
     }
+
+    public function requestEmail(Request $request)
+    {
+        // dd($request);    
+        $custname = $request->input('name');
+        $custemail = $request->input('Email');
+        $custtextmessage = $request->input('$textmessage');
+
+
+        Mail::raw($custtextmessage, function ($message) use ($custname, $custemail,$custtextmessage) {
+        $message->to('niksyahir.hazemin@gmail.com');
+        $message->from($custemail,$custname);
+        });   
+    }
+    
 
 
 //////////////////////////////////// STRIPE GATEWAY ////////////////////////////////////////////

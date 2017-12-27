@@ -20,7 +20,7 @@ class DescriptionsController extends Controller
 		return view('description.description', compact('courses', 'subjects', 'descriptions'));//sent data to view
 	}
 
-    public function findSubjectTitle(Request $request)
+    public function findSubjectTitleDesc(Request $request)
     {
         $data=Subject::select('subject_title','id')->where('course_id', $request->id)->get();
         

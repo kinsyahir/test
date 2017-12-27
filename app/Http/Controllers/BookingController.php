@@ -23,10 +23,11 @@ class BookingController extends Controller
 
     public function postBookingDetails(Request $request)
     {
-    	$value = session()->get('cart');
-        $data = $request->session()->all();
-        dd($data);
+        // $data = $request->session()->all();
         
+        $value = session()->get('cart');
+        dd($value->items);
+
         $booked = new books;
         $booked->totalQty = $value->totalQty;
         $booked->total_price = $value->total_price;
