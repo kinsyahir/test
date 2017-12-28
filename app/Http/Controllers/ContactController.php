@@ -4,22 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Course;
-
-class CoursesController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getContact()
     {
-        $courses = Course::all();
-        return view('courses.index', compact('courses'));
+        return view('udemy.contact');
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -28,9 +23,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        // /courses/create
-        $courses = Course::all();
-        return view('courses.create', compact('courses'));
+        //
     }
 
     /**
@@ -41,35 +34,8 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        // POST /courses
-
-        $this->validate(request(), [
-            'course_name' => 'required',
-            'course_desc' => 'required'
-        ]);
-
-        $post = new Course;
-
-        $post->course_name = request('course_name');
-        $post->course_desc = request('course_desc');
-
-        // Save it to database
-
-        $post->save();
-
-        // and then redirect to the home page
-
-        return redirect('/');
-
-
+        //
     }
-
-
-
-
-
-
-
 
     /**
      * Display the specified resource.
@@ -79,7 +45,7 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        // GET /courses/id
+        //
     }
 
     /**
@@ -90,11 +56,8 @@ class CoursesController extends Controller
      */
     public function edit($id)
     {
-        $courses = Course::find($id);
-        return view('courses.edit')->with('course', $courses);
+        //
     }
-
-
 
     /**
      * Update the specified resource in storage.
@@ -105,7 +68,7 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // PATCH /courses/id
+        //
     }
 
     /**
@@ -116,6 +79,6 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        // DELETE /courses/id
+        //
     }
 }

@@ -48,6 +48,8 @@ Route::post('/description', 'DescriptionsController@store');
 	
 //////////////////////NEW INTERFACE (UDEMY) ////////////////////////////////
 
+Route::get('contact', 'ContactController@getContact');
+
 Route::get('/landingpage', [
 	'uses' => 'subjectsController@getLandingPage',
 	'as' => 'udemy.landingpage',

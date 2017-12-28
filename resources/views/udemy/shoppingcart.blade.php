@@ -3,7 +3,6 @@
 <html lang="en">
 @include('partials.nav')
 
-
   <head>
     <style>
 

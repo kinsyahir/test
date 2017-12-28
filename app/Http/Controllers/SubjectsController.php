@@ -99,7 +99,7 @@ class SubjectsController extends Controller
     public function getContent()
     {
         $subjects = Subject::all();
-        return view('udemy.content', ['subjects' => $subjects]);
+        return view('udemy.content', compact('subjects'));
     }
 
     //CONTROLLER FOR SHOPPING-CART
@@ -177,8 +177,6 @@ class SubjectsController extends Controller
         $message->from($custemail,$custname);
         });   
     }
-    
-
 
 //////////////////////////////////// STRIPE GATEWAY ////////////////////////////////////////////
         // Stripe::setApiKey('sk_test_awptxnVFJaZFQaQXjPg0CNvm');
